@@ -1,0 +1,85 @@
+<h2>Modifier mon compte</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= devise_error_messages! %>
+
+
+  <div class="field">
+    <%= f.label :firstname,'Votre prénom :' %><br />
+    <%= f.text_field :firstname, autofocus: true, autocomplete: "Prénom" %>
+  </div>
+
+    <div class="field">
+    <%= f.label :lastname,'Votre nom :' %><br />
+    <%= f.text_field :lastname, autofocus: true, autocomplete: "Nom" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email,'Votre email :' %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :password,'Votre nouveau mot de passe :' %> <i>(laissez vide si vous ne souhaitez pas le modifier)</i><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+    <% if @minimum_password_length %>
+      <br />
+      <em><%= @minimum_password_length %> caractères minimum</em>
+    <% end %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation,'Confirmez votre nouveau mot de passe :' %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :current_password,'Votre mot de passe actuel :' %> <i>(nécessaire pour modifier les changements)</i><br />
+    <%= f.password_field :current_password, autocomplete: "off" %>
+  </div>
+
+    <div class="field">
+    <%= f.label :streetnumber,'Numéro dans la rue :' %><br />
+    <%= f.text_field :streetnumber, autofocus: true, autocomplete: "Numéro" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :streetname,'Nom de rue:' %><br />
+    <%= f.text_field :streetname, autofocus: true, autocomplete: "Rue" %>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :postalcode,'Code postal :' %><br />
+    <%= f.text_field :postalcode, autofocus: true, autocomplete: "Code Postal" %>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :city,'Ville:' %><br />
+    <%= f.text_field :city, autofocus: true, autocomplete: "Ville" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :phonenumber,'Votre numéro de téléphone :' %><br />
+    <%= f.text_field :phonenumber, autofocus: true, autocomplete: "Numéro de téléphone" %>
+  </div>
+
+
+  <br>
+
+  <div class="actions">
+    <%= f.submit "Mettre à jour" %>
+  </div>
+  
+<% end %>
+
+<h3>Supprimer mon compte</h3>
+
+<p>Insatisfait(e) ? <%= button_to "Supprimer mon compte", registration_path(resource_name), data: { confirm: "Etes-vous sûr(e) ?" }, method: :delete %></p>
+
+<%= link_to "Retour", :back %>

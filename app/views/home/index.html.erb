@@ -1,0 +1,27 @@
+
+<ul>
+	<% if user_signed_in? %>
+	
+	<li>
+		Bonjour <%= current_user.firstname %> !
+	</li>
+
+	<li>
+		<%= link_to "Déconnexion", destroy_user_session_path, method: :delete %>
+	</li>	
+
+	<li>
+		<%= link_to "Modifier votre profil", edit_user_registration_path%>
+	</li>
+
+	<%else%>
+	<li>
+		<%= link_to "Connexion", new_user_session_path%>
+	</li>
+		<li>
+		<%= link_to "Inscription", new_user_registration_path%>
+	</li>
+
+	<% end %>
+</ul>
+
