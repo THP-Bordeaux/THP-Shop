@@ -1,4 +1,4 @@
-alert("bonjour");
+
 (function ($) {
     "use strict";
 
