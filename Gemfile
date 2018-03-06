@@ -1,10 +1,6 @@
 source 'https://rubygems.org'
 
-# authentification
-#gem 'pundit'
-
-
-gem 'devise'#gem 'pundit'
+gem 'devise'
 gem 'rails'
 gem 'puma'
 gem 'sass-rails'
