@@ -1,9 +1,6 @@
 source 'https://rubygems.org'
 
-# authentification
 gem 'devise'
-#gem 'pundit'
-
 gem 'rails'
 gem 'puma'
 gem 'sass-rails'
@@ -12,16 +9,23 @@ gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder'
+gem 'frontend-generators'
+gem 'bootstrap'
+gem 'therubyracer'
+gem 'less-rails-bootstrap'
+gem "font-awesome-rails"
+gem 'jquery-easing-rails'
 
 group :development, :test do
   gem 'sqlite3'
-  gem 'byebug',  '9.0.6', platform: :mri
+  gem 'byebug', platform: :mri
   gem 'rspec-rails'
   gem 'pry-rails'
   gem 'pry-byebug'
   gem 'database_cleaner'
   gem "factory_bot_rails"
   gem 'simplecov'
+  gem 'guard-rspec', require: false
 end
 
 group :development do
