@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Mazelshop Ecommerce HTML Template</title>
+    <title>La chatte à la voisine</title>
     <%= csrf_meta_tags %>    
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,6 +30,11 @@
 </head>
 
   <body>
+    <div class="site-wraper">
+    <%= render "/layouts/templates/top_bar" %>
     <%= yield %>
+    <%= render 'layouts/footer' %>
+</div>
+<%= render "layouts/templates/script" %>
   </body>
 </html>
