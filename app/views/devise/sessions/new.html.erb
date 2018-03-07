@@ -1,148 +1,61 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>Mazelshop Ecommerce HTML Template</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Site Description Here">
+<!--Header-->
+<%= render "/layouts/templates/header" %>
+<!-- End Header -->
 
-    <!-- Bootstrap Css -->
-    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-    <!-- animate css -->
-    <link href="css/plugins/animate.css" rel="stylesheet" type="text/css" />
-    <!--Theme Css-->
-    <link href="css/theme.css" rel="stylesheet" type="text/css" media="all" />
+<!-- Page Body Content Wraper -->
+<div class="page-content-wraper">
+    <!-- Page Content -->
+    <section class="content-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-border-box">
+                        <form>
+                          <h3 class="mb-15">Registered Customers</h3>
+                          <p>Lorem ipsum dolor amet, conse adipiscing, eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                          <%= form_for(resource, as: resource_name, url: user_session_path(resource_name)) do |f| %>
+                            <div class="form-field-wrapper">
+                              <%= f.label :email %> <span class="required">*</span><br />
+                              <%= f.email_field :email, autofocus: true, autocomplete: "email", name:"author", placeholder:"Enter Your Email Address", size:"30" %>
+                            </div>
 
-    <!-- Slider Revolution Css Setting -->
-    <link href="plugins/rev_slider/css/settings-ver.5.3.1.css" rel="stylesheet" type="text/css" />
+                            <div class="form-field-wrapper">
+                              <%= f.label :password %>  <span class="required">*</span><br />
+                              <%= f.password_field :password, autocomplete: "off", name:"author-pass", placeholder:"Enter Your Password", value:"", size:"30" %>
+                            </div>
 
-</head>
-<body>
+                            <% if devise_mapping.rememberable? -%>
+                              <div class="form-field-wrapper">
+                                <%= f.check_box :remember_me %>
+                                <%= f.label :remember_me %>
+                              </div>
+                            <% end -%>
 
-    <!-- Sidebar Menu (Cart Menu) ------------------------------------------------>
-    <%= render "/layouts/templates/side_Bar_right" %>
-    <!--Overlay-->
-    <div class="sidebar_overlay"></div>
-    <!-- End Sidebar Menu (Cart Menu) -------------------------------------------->
+                            <div class="actions">
+                              <%= f.submit "Log in", class:"submit btn btn-lg btn-black" %>
+                            </div>
+                          <% end %>
 
-    <!-- Search Overlay Menu ----------------------------------------------------->
-    <%= render "/layouts/templates/search_overlay" %>
-    <!-- End Search Overlay Menu ------------------------------------------------>
-
-    <div class="site-wraper">
-        <!--Topbar-->
-        <%= render "/layouts/templates/top_bar" %>
-        <!-- End Topbar -->
-
-        <!--Header-->
-        <%= render "/layouts/templates/header" %>
-        <!-- End Header -->
-
-        <!-- Page Body Content Wraper -->
-        <div class="page-content-wraper">
-            <!-- Bread Crumb -->
-            <section class="breadcrumb">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <nav class="breadcrumb-link">
-                                <a href="#"><span>Home</span></a>
-                                <a href="#"><span>Pages</span></a>
-                                <span>Login & Register</span>
-                            </nav>
-                        </div>
+                          <%= render "devise/shared/links" %>
+                        </form>
                     </div>
                 </div>
-            </section>
-            <!-- Bread Crumb -->
-
-            <!-- Page Content -->
-            <section class="content-page">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-border-box">
-                                <form>
-                                  <h3 class="mb-15">Registered Customers</h3>
-                                  <p>Lorem ipsum dolor amet, conse adipiscing, eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                  <%= form_for(resource, as: resource_name, url: user_session_path(resource_name)) do |f| %>
-                                    <div class="form-field-wrapper">
-                                      <%= f.label :email %> <span class="required">*</span><br />
-                                      <%= f.email_field :email, autofocus: true, autocomplete: "email", name:"author", placeholder:"Enter Your Email Address", size:"30" %>
-                                    </div>
-
-                                    <div class="form-field-wrapper">
-                                      <%= f.label :password %>  <span class="required">*</span><br />
-                                      <%= f.password_field :password, autocomplete: "off", name:"author-pass", placeholder:"Enter Your Password", value:"", size:"30" %>
-                                    </div>
-
-                                    <% if devise_mapping.rememberable? -%>
-                                      <div class="field">
-                                        <%= f.check_box :remember_me %>
-                                        <%= f.label :remember_me %>
-                                      </div>
-                                    <% end -%>
-
-                                    <div class="actions">
-                                      <%= f.submit "Log in", class:"submit btn btn-lg btn-black" %>
-                                    </div>
-                                  <% end %>
-
-                                  <%= render "devise/shared/links" %>
-                                </form>
+                <div class="col-md-6">
+                    <div class="form-border-box">
+                        <!-- A remplacer avec un link_to: <%= link_to "S'inscrire", new_user_registration_path(resource_name) %> -->
+                        <form action="/users/sign_up">
+                            <h3 class="mb-15">New Customers</h3>
+                            <p>Lorem ipsum dolor amet, conse adipiscing, eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <div class="form-field-wrapper">
+                                <input name="submit" id="submit1" class="submit btn btn-lg btn-color" value="Create An Account" type="submit">
                             </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-border-box">
-                                <!-- A remplacer avec un link_to: <%= link_to "S'inscrire", new_user_registration_path(resource_name) %> -->
-                                <form action="/users/sign_up">
-                                    <h3 class="mb-15">New Customers</h3>
-                                    <p>Lorem ipsum dolor amet, conse adipiscing, eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                    <div class="form-field-wrapper">
-                                        <input name="submit" id="submit1" class="submit btn btn-lg btn-color" value="Create An Account" type="submit">
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
-            </section>
-            <!-- End Page Content -->
-
+            </div>
         </div>
-        <!-- End Page Body Content Wraper -->
+    </section>
+    <!-- End Page Content -->
 
-        <!-- Footer -->
-        <%= render "/layouts/footer" %>
-        <!-- End Footer -->
-    </div>
-
-    <!--Jquery libery-->
-    <script src="js/jquery.min.js" type="text/javascript"></script>
-    <!--Jquery libery-->
-    <script src="js/plugins/jquery-ui.js" type="text/javascript"></script>
-    <!--Modernizr-->
-    <script src="js/plugins/modernizr.js" type="text/javascript"></script>
-    <!--Tether Tooltip Plugin-->
-    <script src="js/plugins/tether.min.js" type="text/javascript"></script>
-    <!--Bootstrap Js-->
-    <script src="js/plugins/bootstrap.js" type="text/javascript"></script>
-    <!--OWL Slider-->
-    <script src="js/plugins/owl.carousel.min.js" type="text/javascript"></script>
-    <!--Slider Revolution Js File -->
-    <script type="text/javascript" src="plugins/rev_slider/js/jquery.themepunch.revolution.min.js"></script>
-    <script type="text/javascript" src="plugins/rev_slider/js/jquery.themepunch.tools.min.js"></script>
-    <script type="text/javascript" src="plugins/rev_slider/js/revolution.extension.navigation.min.js"></script>
-    <script type="text/javascript" src="plugins/rev_slider/js/revolution.extension.parallax.min.js"></script>
-    <script type="text/javascript" src="plugins/rev_slider/js/revolution.extension.slideanims.min.js"></script>
-    <script type="text/javascript" src="plugins/rev_slider/js/revolution.extension.layeranimation.min.js"></script>
-    <!-- Plugins All js -->
-    <script type="text/javascript" src="js/plugins/plugins-all.js"></script>
-    <!--Main Theme Js File -->
-    <script src="js/custom.js" type="text/javascript"></script>
-    <!-- Map js -->
-    <script src="http://maps.google.com/maps/api/js?sensor=false&amp;language=en" type="text/javascript"></script>
-    <script type="text/javascript" src="js/map.js"></script>
-
-</body>
-</html>
+</div>
+<!-- End Page Body Content Wraper -->
