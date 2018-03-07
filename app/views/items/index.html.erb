@@ -1,11 +1,11 @@
-<h1>Index items</h1>
-<% if  @items.empty? %>
-  <%= "Pas d items pour le moment faites rails db:seed "%>
+<h1>Index products</h1>
+<% if  @products.empty? %>
+  <%= "Pas de products pour le moment faites rails db:seed "%>
 <% else
 
-  @items.each do |item|%>
+  @products.each do |product|%>
     <p>
-      <%=link_to "title = "+ item.product_title, item%>
+      <%=link_to "title = "+ product.product_title, product%>
     </p>
   <% end
 
