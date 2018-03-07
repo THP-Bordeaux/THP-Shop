@@ -5,7 +5,7 @@ class CreateItems < ActiveRecord::Migration[5.1]
       t.text :description
       t.decimal :price
       t.string :image_url
-      t.belongs_to :cart, index: true
+      t.belongs_to :shopping_carts, index: true
 
       t.timestamps
     end

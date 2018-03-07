@@ -15,7 +15,10 @@ gem 'therubyracer'
 gem 'less-rails-bootstrap'
 gem "font-awesome-rails"
 gem 'jquery-easing-rails'
+# Pour l'envoi des emails
 gem 'mailjet'
+# Pour gérer le panier d'achat
+gem 'acts_as_shopping_cart'
 
 group :development, :test do
   gem 'sqlite3'
