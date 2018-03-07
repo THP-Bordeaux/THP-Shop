@@ -10,38 +10,44 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180306155242) do
-
-  create_table "carts", force: :cascade do |t|
-    t.integer "quantity"
-    t.integer "users_id"
-    t.integer "items_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.decimal "total_price"
-    t.index ["items_id"], name: "index_carts_on_items_id"
-    t.index ["users_id"], name: "index_carts_on_users_id"
-  end
-
-  create_table "items", force: :cascade do |t|
-    t.string "product_title"
-    t.text "product_description"
-    t.decimal "product_price"
-    t.string "product_img_url"
-    t.integer "cart_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["cart_id"], name: "index_items_on_cart_id"
-  end
+ActiveRecord::Schema.define(version: 20180307110502) do
 
   create_table "orders", force: :cascade do |t|
     t.datetime "order_date"
     t.integer "users_id"
-    t.integer "carts_id"
+    t.integer "shopping_carts_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["carts_id"], name: "index_orders_on_carts_id"
+    t.index ["shopping_carts_id"], name: "index_orders_on_shopping_carts_id"
     t.index ["users_id"], name: "index_orders_on_users_id"
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string "product_title"
+    t.text "product_description"
+    t.decimal "product_price"
+    t.string "product_img_url"
+    t.integer "shopping_carts_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["shopping_carts_id"], name: "index_products_on_shopping_carts_id"
+  end
+
+  create_table "shopping_cart_items", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "shopping_carts", force: :cascade do |t|
+    t.integer "owner_id"
+    t.string "owner_type"
+    t.integer "quantity"
+    t.integer "item_id"
+    t.string "item_type"
+    t.integer "price_cents", default: 0, null: false
+    t.string "price_currency", default: "USD", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
