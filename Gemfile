@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'stripe'
 gem 'devise'
 gem 'rails'
 gem 'puma'

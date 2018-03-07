@@ -27,15 +27,11 @@ ActiveRecord::Schema.define(version: 20180307110502) do
     t.text "product_description"
     t.decimal "product_price"
     t.string "product_img_url"
-<<<<<<< HEAD
     t.integer "shopping_carts_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["shopping_carts_id"], name: "index_products_on_shopping_carts_id"
-=======
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
->>>>>>> editprofil
+
   end
 
   create_table "shopping_cart_items", force: :cascade do |t|
