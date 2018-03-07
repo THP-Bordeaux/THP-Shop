@@ -1,0 +1,12 @@
+<h1>Index ShoppingCart</h1>
+<% if  @shopping_carts.empty? %>
+  <%= "Le panier est vide mon ami !"%>
+<% else
+
+  @shopping_carts.each do |shopping_cart|%>
+    <p>
+      <%=link_to "title = "+ shopping_cart.shopping_cart_title, shopping_cart%>
+    </p>
+  <% end
+
+end %>
