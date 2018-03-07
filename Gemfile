@@ -15,6 +15,7 @@ gem 'therubyracer'
 gem 'less-rails-bootstrap'
 gem "font-awesome-rails"
 gem 'jquery-easing-rails'
+gem 'mailjet'
 
 group :development, :test do
   gem 'sqlite3'
@@ -25,6 +26,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem "factory_bot_rails"
   gem 'simplecov'
+  gem 'dotenv-rails'
   gem 'guard-rspec', require: false
 end
 
