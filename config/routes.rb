@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'home#index'
 
   get 'home/login_register'
+  get 'home/cart'
 
   resources :items
   devise_for :users
