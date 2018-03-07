@@ -374,8 +374,8 @@
             autoplay: false,
             singleItem: true,
             navText: [
-                '<i class="fa fa-angle-left" aria-hidden="true"></i>',
-                '<i class="fa fa-angle-right" aria-hidden="true"></i>'
+                '',
+                ''
             ],
             responsive: {
                 0: {
@@ -404,8 +404,8 @@
             autoplay: false,
             singleItem: true,
             navText: [
-                '<i class="fa fa-angle-left" aria-hidden="true"></i>',
-                '<i class="fa fa-angle-right" aria-hidden="true"></i>'
+                '',
+                ''
             ],
             responsive: {
                 0: {
@@ -435,8 +435,8 @@
             autoplay: true,
             singleItem: true,
             navText: [
-                '<i class="fa fa-angle-left" aria-hidden="true"></i>',
-                '<i class="fa fa-angle-right" aria-hidden="true"></i>'
+                '',
+                ''
             ]
 
         });
@@ -451,8 +451,8 @@
             autoplay: false,
             singleItem: true,
             navText: [
-                '<i class="fa fa-angle-left" aria-hidden="true"></i>',
-                '<i class="fa fa-angle-right" aria-hidden="true"></i>'
+                '',
+                ''
             ],
             responsive: {
                 0: {
@@ -481,8 +481,8 @@
             autoplay: false,
             singleItem: true,
             navText: [
-                '<i class="fa fa-angle-left" aria-hidden="true"></i>',
-                '<i class="fa fa-angle-right" aria-hidden="true"></i>'
+                '',
+                ''
             ],
             responsive: {
                 0: {

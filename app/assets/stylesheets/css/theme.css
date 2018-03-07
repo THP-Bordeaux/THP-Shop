@@ -1903,7 +1903,7 @@ input[type="button"], button, .btn {
 }
 
     .logo img {
-        width: 100%;
+        width: 50%;
     }
 
 @media (max-width: 991px) {
@@ -1912,6 +1912,12 @@ input[type="button"], button, .btn {
     }
 }
 
+#logot{
+    font-family: 'Lobster', cursive; 
+    color: #ff6600; 
+    font-size: 15px; 
+    font-weight: 400
+}
 /*------------------------------------------------------------*/
 /* Search Bar */
 /*------------------------------------------------------------*/
@@ -4872,7 +4878,7 @@ table.shop_attributes th:last-child, table.shop_attributes td:last-child {
 
 
 .star-rating::before {
-    content: "\f006\f006\f006\f006\f006";
+    content: "\01F514\01F514\01F514\01F514\01F514";
     display: block;
     font-family: "FontAwesome";
     font-size: 14px;
