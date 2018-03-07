@@ -16,3 +16,5 @@ module Shopbdx
     # -- all .rb files in that directory are automatically loaded.
   end
 end
+
+config.action_mailer.delivery_method = :mailjet
