@@ -1,0 +1,12 @@
+<h1>Test Panier</h1>
+
+<h2>Add Items</h2>
+
+To add an item to the cart you use the add method. You have to send the object and the price of the object as parameters.
+
+So, if you had a Product class, you would do something like this:
+
+@shopping_cart = ShoppingCart.create
+@product = Product.find(1)
+
+@shopping_cart.add(@product, @product.product_price)
