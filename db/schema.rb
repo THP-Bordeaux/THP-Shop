@@ -31,8 +31,6 @@ ActiveRecord::Schema.define(version: 20180307110502) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["shopping_carts_id"], name: "index_products_on_shopping_carts_id"
-
-
   end
 
   create_table "shopping_cart_items", force: :cascade do |t|
