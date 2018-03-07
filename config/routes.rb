@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   root 'home#index'
 
   get 'home/login_register'
+  get 'home/cart'
 
   get 'testcart', to: 'home#testcart' # Simon: pour tester le panier
 

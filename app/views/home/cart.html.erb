@@ -1,0 +1,65 @@
+<section class="content-page">
+    <div class="container mb-80">
+        <div class="row">
+            <div class="col-sm-12">
+                <article class="post-8">
+                    <form class="cart-form" action="#" method="post">
+                        <div class="cart-product-table-wrap responsive-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th class="product-name">Produit</th>
+                                        <th class="product-price">Prix</th>
+                                        <th class="product-quantity">Quantité</th>
+                                        <th class="product-subtotal">Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+
+
+                                        <td class="product-name">
+                                            <a><=product.product_title%></a>
+                                        </td>
+                                        <td class="product-price">
+                                            <span class="product-price-amount amount"><span class="currency-sign">$</span><=product.product_price%></span>
+                                        </td>
+                                        <td>
+                                            <div class="product-quantity">
+                                                <span data-value="+" class="quantity-btn quantityPlus"></span>
+                                                <input class="quantity input-lg" step="1" min="1" max="9" name="quantity" value="1" title="Quantity" type="number" />
+                                                <span data-value="-" class="quantity-btn quantityMinus"></span>
+                                            </div>
+                                        </td>
+                                        <td class="product-subtotal">
+                                            <span class="product-price-sub_totle amount"><span class="currency-sign">$</span><%=399.00%></span>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </form>
+                    <div class="cart-collateral">
+                        <div class="cart_totals">
+                            <h3>Total</h3>
+                                    <tbody>
+                                        <tr class="order-total">
+                                            <th>Total</th>
+                                            <td><span class="product-price-amount amount"><span class="currency-sign">$</span><=@totalcart</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="product-proceed-to-checkout">
+                                <a class="btn btn-xlg btn-color form-full" href="checkout.html">Proceed to checkout</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+
+</section>
+
