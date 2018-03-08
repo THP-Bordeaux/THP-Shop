@@ -18,13 +18,69 @@ end
 
 my_items =[]
 
-i=1
-10.times do
-  my_items << {  title:"MonChat#{i}",
-  description:"Description de MonChat#{i}",
+#i=1
+#10.times do
+#  my_items << {  title:"MonChat#{i}",
+#  description:"Description de MonChat#{i}",
+#  price: i,
+#  image_url: "cat_img_#{i}"}
+#  i+=1
+#end
+
+my_items << {  title:"Chapin",
+  description:"Description de Chapin",
   price: i,
-  image_url: "cat_img_#{i}"}
-  i+=1
-end
+  image_url: "cat_img_1.jpg"}
+
+my_items << {  title:"",
+  description:"Description de Happiness",
+  price: i,
+  image_url: "cat_img_2.jpg"}
+
+my_items << {  title:"Stone cat",
+  description:"Description de Stone cat",
+  price: i,
+  image_url: "cat_img_3.jpg"}
+
+my_items << {  title:"Drunk cat",
+  description:"Description de Drunk cat",
+  price: i,
+  image_url: "cat_img_4.jpg"}
+
+
+my_items << {  title:"Happy cat",
+  description:"Description de Happy cat",
+  price: i,
+  image_url: "cat_img_6.jpg"}
+
+
+my_items << {  title:"Stone cat too",
+  description:"Description de Stone cat 2",
+  price: i,
+  image_url: "cat_img_5.jpg"}
+
+
+my_items << {  title:"Zizou cat",
+  description:"Description de Zizou cat",
+  price: i,
+  image_url: "cat_img_7.jpg"}
+
+
+my_items << {  title:"Happy chapin",
+  description:"Description de Happy chapin",
+  price: i,
+  image_url: "cat_img_8.jpg"}
+
+
+my_items << {  title:"Give me five",
+  description:"Description de Give me five",
+  price: i,
+  image_url: "cat_img_9.jpg"}
+
+
+my_items << {  title:"Happiness too",
+  description:"Description de Happiness too",
+  price: i,
+  image_url: "cat_img_10.jpg"}
 
 cats = Item.create(my_items)
