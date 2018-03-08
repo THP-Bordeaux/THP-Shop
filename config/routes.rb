@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  devise_for :users
+
   get 'paniers/index', as: "panier"
 
 
@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   post   "/order",       to: "orders#create"
   get    "/order",       to: "orders#create"
   get "orders/index", as: "orders_list"
-
+  devise_for :users, controllers: { registrations: "users/registrations" }
 
 
 
