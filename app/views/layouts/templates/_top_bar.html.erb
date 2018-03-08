@@ -8,10 +8,10 @@
             <div class="col-md-6 text-lg-right text-md-left">
                 <ul class="links">
                     <li class="">
-                    <% if logged_in? %>
+                    <% if user_signed_in? %>
                         <a href="/user/" class="dropdown-toggle" data-toggle="dropdown"><span class="hidden-sm-down">Mon compte</span></a>
                         <div class="dropdown-menu">
-                            <a href="login-register.html" class="dropdown-item">Mon compte</a>
+                            <a href="login-register.html" class="dropdown-item">Mon profil</a>
                             <a href="/home/cart" class="dropdown-item">Panier</a>
                         </div>
                     </li>
@@ -30,6 +30,7 @@
                     <li>
                         <a href="https://www.thehackingproject.org/">Information</a>
                     </li>
+                    <%end%>
                 </ul>
             </div>
         </div>

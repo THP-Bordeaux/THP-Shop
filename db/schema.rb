@@ -10,44 +10,45 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180307153635) do
+ActiveRecord::Schema.define(version: 20180308113627) do
+
+  create_table "carts", force: :cascade do |t|
+    t.string "title"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_carts_on_user_id"
+  end
+
+  create_table "carts_items", id: false, force: :cascade do |t|
+    t.integer "cart_id"
+    t.integer "item_id"
+    t.index ["cart_id"], name: "index_carts_items_on_cart_id"
+    t.index ["item_id"], name: "index_carts_items_on_item_id"
+  end
+
+  create_table "items", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.decimal "price"
+    t.string "image_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "items_orders", id: false, force: :cascade do |t|
+    t.integer "item_id"
+    t.integer "order_id"
+    t.index ["item_id"], name: "index_items_orders_on_item_id"
+    t.index ["order_id"], name: "index_items_orders_on_order_id"
+  end
 
   create_table "orders", force: :cascade do |t|
-    t.datetime "order_date"
-    t.integer "users_id"
-    t.integer "shopping_carts_id"
+    t.string "title"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["shopping_carts_id"], name: "index_orders_on_shopping_carts_id"
-    t.index ["users_id"], name: "index_orders_on_users_id"
-  end
-
-  create_table "products", force: :cascade do |t|
-    t.string "product_title"
-    t.text "product_description"
-    t.decimal "product_price"
-    t.string "product_img_url"
-    t.integer "shopping_carts_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["shopping_carts_id"], name: "index_products_on_shopping_carts_id"
-  end
-
-  create_table "shopping_cart_items", force: :cascade do |t|
-    t.integer "owner_id"
-    t.string "owner_type"
-    t.integer "quantity"
-    t.integer "item_id"
-    t.string "item_type"
-    t.integer "price_cents", default: 0, null: false
-    t.string "price_currency", default: "USD", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "shopping_carts", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -63,13 +64,6 @@ ActiveRecord::Schema.define(version: 20180307153635) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "lastname"
-    t.string "firstname"
-    t.integer "streetnumber"
-    t.string "streetname"
-    t.integer "postalcode"
-    t.string "city"
-    t.string "phonenumber"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

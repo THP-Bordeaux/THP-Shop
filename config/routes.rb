@@ -8,7 +8,8 @@ Rails.application.routes.draw do
 
   get 'shopping_carts/clear'
 
-  root 'home#index'
+  root 'items#index'
+
 
   get 'home/login_register'
   get 'home/cart'

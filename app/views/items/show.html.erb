@@ -1,2 +1,14 @@
-<h1>Products#show</h1>
-<p><%= @product.inspect %></p>
+
+<li>titre <strong><%= @item.title %></strong>,  Prix <strong><%= @item.price %> euros</strong></li>
+<h1><%= @item.title %></h1>
+<ul>
+  <li><img src="/assets/cats/<%= @item.image_url %>"  alt="mazel" /></li>
+  <li>Description <strong><%= @item.description %></strong> </li>
+  <% if user_signed_in? %>
+    <% unless @user_items.include?(@item) %>
+      <li><%= link_to " | Ajouter |", add_path(item_id: @item.id, user_id: current_user.id), method: :post %></li>
+    <% else  %>
+      <li><%= link_to "| Retirer | ", remove_path(item_id: @item.id, user_id: current_user.id),  method: :delete %></li>
+    <% end  %>
+  <% end %>
+</ul>

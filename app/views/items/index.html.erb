@@ -1,12 +1,9 @@
-<h1>Index products</h1>
-<% if  @products.empty? %>
-  <%= "Pas de products pour le moment faites rails db:seed "%>
-<% else
+<%= render "/layouts/templates/search_overlay" %>
 
-  @products.each do |product|%>
-    <p>
-      <%=link_to "title = "+ product.product_title, product%>
-    </p>
-  <% end
+<%= render "layouts/templates/test1" %>
 
-end %>
+<%= render "/layouts/templates/social_banner" %>
+
+<%= render "layouts/templates/hot_deal" %>
+
+<%= render "layouts/templates/promo_text_banner" %>  
