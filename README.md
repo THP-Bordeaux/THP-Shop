@@ -12,4 +12,4 @@ Ce projet à mal commencé, mal continué et mal fini!
 
   * Donc on te laisse corriger la grosse bouse qui nous sert de projet. 
 
-  Merci!!!
+  Merci!!!  
