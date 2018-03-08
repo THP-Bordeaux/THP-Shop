@@ -8,9 +8,9 @@ Ce projet à mal commencé, mal continué et mal fini!
 
   *  Donc on est jeudi soir 18h55, on a le meetup de présentation aux futurs moussaillons à 19h30 avec Félix, donc on est obligé d'arréter là. 
 
-  * Heureusement, notre super coéquipier Arnold à sauver les meubles en réussissant à pusher quelque chose sur Heroku : https://cat-shop-gir.herokuapp.com/
+  * **Heureusement, notre super coéquipier Arnold à sauver les meubles en réussissant à pusher quelque chose sur Heroku : https://cat-shop-gir.herokuapp.com/**
   
-  * Pour le repo GitHub, c'est ici : https://github.com/Arnolddomaya/cat-shop
+  * **Pour le repo GitHub, c'est ici : https://github.com/Arnolddomaya/cat-shop**
   
   * Et on te racontera les détails sur Slack ou au tel.
   
