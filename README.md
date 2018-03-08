@@ -14,7 +14,7 @@ Ce projet à mal commencé, mal continué et mal fini!
   
   * Mais rassures-toi, on s'est bien chauffé sur ce projet et notre projet final va déchirer :)
   
-  (Message tapéà 23:14, debout dans le tram B de Bordeauv :) )
+  (Message tapéà 23:14, debout dans le tram B de Bordeaux :) )
   
   
   Merci!!!  
