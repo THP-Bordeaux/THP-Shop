@@ -7,12 +7,13 @@
             </div>
             <div class="col-md-6 text-lg-right text-md-left">
                 <ul class="links">
-                    <li class="">
+
                     <% if user_signed_in? %>
+                    <li class="">
                         <a href="/user/" class="dropdown-toggle" data-toggle="dropdown"><span class="hidden-sm-down">Mon compte</span></a>
                         <div class="dropdown-menu">
-                            <a href="login-register.html" class="dropdown-item">Mon profil</a>
-                            <a href="/home/cart" class="dropdown-item">Panier</a>
+                            <a href="/users/edit/" class="dropdown-item">Mon profil</a>
+                            <a href="/paniers/index" class="dropdown-item">Panier</a>
                         </div>
                     </li>
 
