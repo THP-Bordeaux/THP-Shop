@@ -5,82 +5,64 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-my_users = []
 
-my_users << User.create( email:"dodo@gmail.com", password:"motdepasse", password_confirmation:"motdepasse")
-my_users << User.create( email:"dada@gmail.com", password:"motdepasse", password_confirmation:"motdepasse")
+User.create! email:"arnold@gmail.com", password:"motdepasse", password_confirmation:"motdepasse"
+User.create! email:"pierrick@gmail.com", password:"motdepasse", password_confirmation:"motdepasse"
+User.create! email:"jeremy@gmail.com", password:"motdepasse", password_confirmation:"motdepasse"
+User.create! email:"simon@gmail.com", password:"motdepasse", password_confirmation:"motdepasse"
 
-my_users.each do |user|
-   user.cart = Cart.new(title: "panier User_#{user.id}")
-   user.save
-end
-
-
-my_items =[]
-
-#i=1
-#10.times do
-#  my_items << {  title:"MonChat#{i}",
-#  description:"Description de MonChat#{i}",
-#  price: i,
-#  image_url: "cat_img_#{i}"}
-#  i+=1
-#end
-
-my_items << {  title:"Chapin",
+Item.create! title:"Chapin",
   description:"Description de Chapin",
-  price: i,
-  image_url: "cat_img_1.jpg"}
+  price: 19.99,
+  image_url: "cat_img_1.jpg"
 
-my_items << {  title:"",
+Item.create! title:"",
   description:"Description de Happiness",
-  price: i,
-  image_url: "cat_img_2.jpg"}
+  price: 19.99,
+  image_url: "cat_img_2.jpg"
 
-my_items << {  title:"Stone cat",
+Item.create! title:"Stone cat",
   description:"Description de Stone cat",
-  price: i,
-  image_url: "cat_img_3.jpg"}
+  price: 19.99,
+  image_url: "cat_img_3.jpg"
 
-my_items << {  title:"Drunk cat",
+Item.create! title:"Drunk cat",
   description:"Description de Drunk cat",
-  price: i,
-  image_url: "cat_img_4.jpg"}
+  price: 19.99,
+  image_url: "cat_img_4.jpg"
 
 
-my_items << {  title:"Happy cat",
+Item.create! title:"Happy cat",
   description:"Description de Happy cat",
-  price: i,
-  image_url: "cat_img_6.jpg"}
+  price: 19.99,
+  image_url: "cat_img_6.jpg"
 
 
-my_items << {  title:"Stone cat too",
+Item.create! title:"Stone cat too",
   description:"Description de Stone cat 2",
-  price: i,
-  image_url: "cat_img_5.jpg"}
+  price: 19.99,
+  image_url: "cat_img_5.jpg"
 
 
-my_items << {  title:"Zizou cat",
+Item.create! title:"Zizou cat",
   description:"Description de Zizou cat",
-  price: i,
-  image_url: "cat_img_7.jpg"}
+  price: 19.99,
+  image_url: "cat_img_7.jpg"
 
 
-my_items << {  title:"Happy chapin",
+Item.create! title:"Happy chapin",
   description:"Description de Happy chapin",
-  price: i,
-  image_url: "cat_img_8.jpg"}
+  price: 19.99,
+  image_url: "cat_img_8.jpg"
 
 
-my_items << {  title:"Give me five",
+Item.create! title:"Give me five",
   description:"Description de Give me five",
-  price: i,
-  image_url: "cat_img_9.jpg"}
+  price: 19.99,
+  image_url: "cat_img_9.jpg"
 
 
-my_items << {  title:"Happiness too",
+Item.create! title:"Happiness too",
   description:"Description de Happiness too",
-  price: i,
-  image_url: "cat_img_10.jpg"}
-
-cats = Item.create(my_items)
+  price: 19.99,
+  image_url: "cat_img_10.jpg"
