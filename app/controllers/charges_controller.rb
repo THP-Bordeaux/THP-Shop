@@ -9,8 +9,8 @@ def sum_cart
 	
 	@totalcart = 0
 	
-	@cart.products.each do |product| 
-	  @totalcart =+ item.product_price
+	@cart.shopping_cart_item.each do |product| 
+	  @totalcart =+ item.price_cents
 	end
 	
 	@totalcart  
@@ -22,12 +22,12 @@ def create
   @amount = sum_cart.to_i
 
   @order = Order.new
-  @order.products = current_user.shopping_cart.products
+  @order.shopping_cart_item = current_user.shopping_cart.shopping_cart_item
   @order.user_id = current_user.id
 	 
 	#debugger
 	 if @order.save
-	 current_user.shopping_cart.products = []
+	 current_user.shopping_cart.shopping_cart_item = []
 	#redirect_to orders_new_path
 	 end
 

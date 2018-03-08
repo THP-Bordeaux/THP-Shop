@@ -1,0 +1,39 @@
+<section class="section-padding">
+    <div class="container">
+        <div class="row">
+            <h3 class="page-title">Articles</h3>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+          <% if  @products.empty? %>
+            <p>Pas de produit à afficher</p>
+          <% else @products.each do |product|%>
+              <div class="product-item-4 owl-carousel owl-theme">
+                  <div class="item">
+                      <div class="product-item">
+                          <div class="product-item-img">
+                              <div class="product-item-img-wrap">
+                                  <img src="assets/product-img/product_12547000.jpg" alt="mazel" />
+                              </div>
+                              <div class="product-button">
+                                  <a href="#" rel="tooltip" data-placement="right" title="Ajouter au panier"><img src="assets/product-img/shopping-cart.png" alt="" /></a>
+                              </div>
+                          </div>
+                          <div class="product-item-content">
+                              <a class="tag">Chat Guerrieros</a>
+                              <a class="product-title" href="/items/1"><%= @products.product_title %></a>
+                              <p class="product-description"><%= @products.product_description %></p>
+                              <div class="product-price"><del>$59.99</del><%= @products.product_price %></div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+            <% end %>
+
+          <% end %>
+
+
+        </div>
+    </div>
+</section>

@@ -14,28 +14,31 @@
                                         <th class="product-subtotal">Total</th>
                                     </tr>
                                 </thead>
+                                
                                 <tbody>
+
+                        
+                         <% @shopping_cart.product.each do |product| %>
                                     <tr>
-
-
-                                        <td class="product-name">
-                                            <a><=product.product_title%></a>
+                                       <td class="product-name">
+                                            <a><%=shopping_cart_item.item_id%></a>
                                         </td>
                                         <td class="product-price">
-                                            <span class="product-price-amount amount"><span class="currency-sign">$</span><=product.product_price%></span>
+                                            <span class="product-price-amount amount"><span class="currency-sign">$</span><%=shopping_cart_item.price_cents%></span>
                                         </td>
                                         <td>
                                             <div class="product-quantity">
-                                                <span data-value="+" class="quantity-btn quantityPlus"></span>
+
                                                 <input class="quantity input-lg" step="1" min="1" max="9" name="quantity" value="1" title="Quantity" type="number" />
-                                                <span data-value="-" class="quantity-btn quantityMinus"></span>
+
                                             </div>
                                         </td>
                                         <td class="product-subtotal">
-                                            <span class="product-price-sub_totle amount"><span class="currency-sign">$</span><%=399.00%></span>
+                                            <span class="product-price-sub_totle amount"><span class="currency-sign">$</span><%=shopping_cart_item.price_cents%></span>
                                         </td>
                                     </tr>
-
+                            
+                            <%end%>
                                 </tbody>
                             </table>
                         </div>
@@ -46,13 +49,31 @@
                                     <tbody>
                                         <tr class="order-total">
                                             <th>Total</th>
-                                            <td><span class="product-price-amount amount"><span class="currency-sign">$</span><=@totalcart</span></td>
+                                            <td><span class="product-price-amount amount"><span class="currency-sign">$</span><%=@totalcart%></span></td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
                             <div class="product-proceed-to-checkout">
-                                <a class="btn btn-xlg btn-color form-full" href="checkout.html">Proceed to checkout</a>
+
+                            <%= form_tag orders_new_path do %>
+                              <article>
+                                <% if flash[:error].present? %>
+                                  <div id="error_explanation">
+                                    <p><%= flash[:error] %></p>
+                                  </div>
+                                <% end %>
+                                
+                              </article>
+
+                              <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                                      data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                                      data-description="Your order"
+                                      data-amount="<%= @totalcart*100 %>"
+                                      data-currency="usd"
+                                      data-locale="auto"><
+                                </script>
+                            <% end %>
                             </div>
                         </div>
                     </div>
